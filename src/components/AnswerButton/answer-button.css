@@ -1,0 +1,182 @@
+.answer-button {
+  margin-left: 15px;
+  margin-right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 360px;
+}
+
+.btn-wrapper {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.btn-line-right,
+.btn-line-left {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.btn-line-right::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 1px;
+  background: var(--BLACK-40);
+  width: 15px;
+  left: 100%;
+  top: -60px;
+}
+
+.btn-line-left::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 1px;
+  background: var(--BLACK-40);
+  width: 15px;
+  right: 100%;
+  top: 30px;
+}
+
+.answer-text {
+  background: var(--WHITE-100);
+  border-right: transparent;
+  border-left: transparent;
+  border-top: 1px solid var(--BLACK-40);
+  border-bottom: 1px solid var(--BLACK-40);
+  font-size: 16px;
+  font-weight: 400;
+  height: 60px;
+  padding-top: 20px;
+  text-align: left;
+  width: 300px;
+}
+
+.answer-text span {
+  color: var(--ORANGE-100);
+  font-weight: 600;
+  padding-right: 3px;
+}
+
+.triangle-left {
+  border-top: var(--button-size) solid transparent;
+  border-bottom: var(--button-size) solid transparent;
+  border-right: var(--button-size) solid var(--BLACK-40);
+  height: 0;
+  position: relative;
+  width: 0;
+}
+
+.triangle-left:after {
+  border-top: var(--button-border-size) solid transparent;
+  border-bottom: var(--button-border-size) solid transparent;
+  border-right: var(--button-border-size) solid var(--WHITE-100);
+  content: '';
+  height: 0;
+  left: 1px;
+  position: absolute;
+  top: var(--button-border-ident);
+  width: 0;
+}
+
+.triangle-right {
+  border-top: var(--button-size) solid transparent;
+  border-bottom: var(--button-size) solid transparent;
+  border-right: var(--button-size) solid var(--BLACK-40);
+  height: 0;
+  position: relative;
+  transform: rotate(180deg);
+  width: 0;
+}
+
+.triangle-right:after {
+  content: '';
+  border-top: var(--button-border-size) solid transparent;
+  border-bottom: var(--button-border-size) solid transparent;
+  border-right: var(--button-border-size) solid var(--WHITE-100);
+  height: 0;
+  left: 1px;
+  position: absolute;
+  top: var(--button-border-ident);
+  width: 0;
+}
+
+/* hover buttons styling */
+.answer-button:hover .btn-line-right::after {
+  background: var(--ORANGE-100);
+}
+.answer-button:hover .btn-line-left::before {
+  background-color: var(--ORANGE-100);
+}
+.btn-wrapper:hover .answer-text {
+  border-color: var(--ORANGE-100);
+}
+.btn-wrapper:hover .triangle-left {
+  border-right-color: var(--ORANGE-100);
+}
+.btn-wrapper:hover .triangle-right {
+  border-right-color: var(--ORANGE-100);
+}
+
+/* active button styling */
+.btn-wrapper:active .answer-text {
+  background-color: var(--ORANGE-5);
+}
+.btn-wrapper:hover:active .triangle-left:after {
+  border-right-color: var(--ORANGE-5);
+}
+.btn-wrapper:hover:active .triangle-right::after {
+  border-right-color: var(--ORANGE-5);
+}
+
+/* correct answer styling */
+.correct .btn-line-right::after {
+  background: var(--GREEN-100);
+}
+.correct .btn-line-left::before {
+  background-color: var(--GREEN-100);
+}
+.correct .answer-text {
+  background-color: var(--GREEN-5);
+  border-top-color: var(--GREEN-100);
+  border-bottom-color: var(--GREEN-100);
+}
+.correct .triangle-left:after {
+  border-right-color: var(--GREEN-5);
+}
+.correct .triangle-right:after {
+  border-right-color: var(--GREEN-5);
+}
+.correct .triangle-left {
+  border-right-color: var(--GREEN-100);
+}
+.correct .triangle-right {
+  border-right-color: var(--GREEN-100);
+}
+
+/* wrong answer styling */
+.wrong .btn-line-right::after {
+  background: var(--RED-100);
+}
+.wrong .btn-line-left::before {
+  background-color: var(--RED-100);
+}
+.wrong .answer-text {
+  background-color: var(--RED-5);
+  border-top-color: var(--RED-100);
+  border-bottom-color: var(--RED-100);
+}
+.wrong .triangle-left:after {
+  border-right-color: var(--RED-5);
+}
+.wrong .triangle-right:after {
+  border-right-color: var(--RED-5);
+}
+.wrong .triangle-left {
+  border-right-color: var(--RED-100);
+}
+.wrong .triangle-right {
+  border-right-color: var(--RED-100);
+}

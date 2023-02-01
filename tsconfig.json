@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "rootDir": "./",
+    "baseUrl": ".",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "outDir": "./build/",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "module": "esnext",
+    "target": "es6",
+    "jsx": "preserve",
+    "allowJs": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noEmit": false,
+    "downlevelIteration": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": ["jest"],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "paths": {
+      "@turn/styled": ["src/styled"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "*.config.js",
+    ".eslintrc.js",
+    "__tests__/**/*",
+    "src/@types/index.d.ts"
+  ],
+  "files": ["src/@types/index.d.ts"],
+  "exclude": ["node_modules", "build", "public", "src/**/*.spec.ts"]
+}
