@@ -4,7 +4,7 @@ Who Wants To Be A Millionaire? is an online game written using React and TypeScr
 
 ### Link to the game
 
-[link]
+[Link](https://petulant-annie.github.io/millionaire-game)
 
 ### Getting Started
 

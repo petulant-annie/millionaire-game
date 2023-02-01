@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Who Wants to Be a Millionaire?",
   "main": "index.tsx",
+  "homepage": "https://petulant-annie.github.io/millionaire-game",
   "private": true,
   "scripts": {
     "start": "webpack serve --mode none",
@@ -11,7 +12,9 @@
     "test:run": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .tsx",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +73,7 @@
     "eslint-plugin-n": "15.6.0",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.31.11",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "5.5.0",
     "ts-loader": "9.4.2",
     "tslib": "^2.4.1",
