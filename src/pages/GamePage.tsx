@@ -3,18 +3,22 @@ import { useNavigate } from 'react-router-dom';
 
 import { AnswerButton } from '../components/AnswerButton/AnswerButton';
 import { Sidebar } from '../components/Sidebar/SidebarMain';
+import { BurgerBtn } from '../components/BurgerBtn';
+import { CloseBtn } from '../components/CloseBtn';
 import { randomIntFromInterval } from '../helpers/helpers';
 import gamesJSON from '../helpers/questions.json';
 import optionsJSON from '../helpers/options.json';
-import { BurgerBtn } from '../components/BurgerBtn';
-import { CloseBtn } from '../components/CloseBtn';
+import loseSound from '../assets/sounds/Lose.mp3';
+import winSound from '../assets/sounds/Win.mp3';
 
 const DELAY = 500;
-const rndInt = randomIntFromInterval(0, 4);
+const rndInt = randomIntFromInterval(0, 45);
 const questionsArr = gamesJSON.games[rndInt];
 
 export const Game: React.FC = () => {
   const navigate = useNavigate();
+  const loseAudio = new Audio(loseSound);
+  const winAudio = new Audio(winSound);
 
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState<number>(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -31,11 +35,13 @@ export const Game: React.FC = () => {
       currentQuestionIdx <= questionsArr.questions.length //amount of questions in the arr
     ) {
       event.currentTarget.classList.add('correct');
+      winAudio.play();
       setTimeout(() => {
         setCurrentQuestionIdx(currentQuestionIdx + 1);
       }, DELAY);
     } else {
       event.currentTarget.classList.add('wrong');
+      loseAudio.play();
       setTimeout(() => {
         navigate('/over', {
           replace: true,

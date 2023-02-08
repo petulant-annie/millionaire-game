@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 import { GameOverPage } from './pages/GameOverPage';
 import { Game } from './pages/GamePage';
@@ -11,7 +11,7 @@ import './index.css';
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <StartPage />,
     path: '/',

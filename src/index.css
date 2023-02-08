@@ -71,14 +71,16 @@ body {
   margin-top: 5%;
 }
 
-.start-title {
-  font-size: 3.5vw;
-  font-style: normal;
-}
-
 .score-heading {
   color: var(--BLACK-40);
   font-size: 32px;
+  min-width: 35vw;
+}
+
+.start-title {
+  font-size: 3.5vw;
+  font-style: normal;
+  min-width: 35vw;
 }
 
 .game-container {
@@ -101,7 +103,8 @@ body {
 .answers-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-top: 65%;
+  padding-top: 50vh;
+  max-width: 780px;
 }
 
 .menu-burger {
@@ -120,7 +123,7 @@ body {
     margin-top: 30vh;
   }
   .answers-container {
-    padding-top: 40%;
+    padding-top: 40vh;
   }
 
   .menu-burger {
@@ -141,8 +144,13 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+
   .start-title {
     font-size: 35px;
+    text-align: center;
+  }
+
+  .score-heading {
     text-align: center;
   }
 
@@ -156,7 +164,7 @@ body {
     grid-template-rows: repeat(4, 4.5em);
     margin: 0 auto;
     max-width: 390px;
-    padding-top: 30%;
+    padding-top: 30vh;
   }
 }
 

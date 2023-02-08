@@ -2,8 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MainButton } from '../components/MainButton/MainButton';
-import winningAmount from '../helpers/winningAmount.json';
 import { Hand } from '../components/HandImage';
+import winningAmount from '../helpers/winningAmount.json';
 
 export const GameOverPage: React.FC = () => {
   const location = useLocation();
