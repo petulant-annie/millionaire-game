@@ -7,25 +7,28 @@ export const AnswerButton: React.FC<{
   text: string;
   spanContent: string;
   onClick: (event: React.MouseEvent, index: number) => void;
-}> = ({ index, text, spanContent, onClick }) => {
-  return (
-    <button
-      className={`answer-button`}
-      onClick={(event) => onClick(event, index)}
-    >
-      <div className="btn-line-left"></div>
+}> = ({
+  index, text, spanContent, onClick,
+}) => (
+  <button
+    type="button"
+    className="answer-button"
+    onClick={(event) => onClick(event, index)}
+  >
+    <div className="btn-line-left" />
 
-      <div className="btn-wrapper">
-        <div className="triangle-left"></div>
-        <div className="answer-text">
-          <span>{spanContent}</span> {text}
-        </div>
-        <div className="arrow-wrapper">
-          <div className="triangle-right"></div>
-        </div>
+    <div className="btn-wrapper">
+      <div className="triangle-left" />
+      <div className="answer-text">
+        <span>{spanContent}</span>
+        {' '}
+        {text}
       </div>
+      <div className="arrow-wrapper">
+        <div className="triangle-right" />
+      </div>
+    </div>
 
-      <div className="btn-line-right"></div>
-    </button>
-  );
-};
+    <div className="btn-line-right" />
+  </button>
+);

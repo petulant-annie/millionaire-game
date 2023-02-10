@@ -31,8 +31,8 @@ export const Game: React.FC = () => {
 
   const handleCurrentAnswer = (event: React.MouseEvent, answerIdx: number) => {
     if (
-      answerIdx === currentQuestionItem.answer &&
-      currentQuestionIdx <= questionsArr.questions.length //amount of questions in the arr
+      answerIdx === currentQuestionItem.answer
+      && currentQuestionIdx <= questionsArr.questions.length // amount of questions in the arr
     ) {
       event.currentTarget.classList.add('correct');
       winAudio.play();
@@ -53,17 +53,15 @@ export const Game: React.FC = () => {
 
   const answers = gamesJSON.games[rndInt].questions[
     currentQuestionIdx
-  ].content.map((content, index) => {
-    return (
-      <AnswerButton
-        key={content}
-        index={index}
-        onClick={handleCurrentAnswer}
-        text={content}
-        spanContent={optionsJSON.answerOptions[index]}
-      />
-    );
-  });
+  ].content.map((content, index) => (
+    <AnswerButton
+      key={content}
+      index={index}
+      onClick={handleCurrentAnswer}
+      text={content}
+      spanContent={optionsJSON.answerOptions[index]}
+    />
+  ));
 
   const handleMenuBurger = () => {
     setIsOpen(!isOpen);
@@ -79,7 +77,7 @@ export const Game: React.FC = () => {
         </div>
         <div className="answers-container">{answers}</div>
       </div>
-      <button className="menu-burger" onClick={handleMenuBurger}>
+      <button type="button" className="menu-burger" onClick={handleMenuBurger}>
         {menuItem}
       </button>
       <Sidebar currentIndex={currentQuestionIdx} isMenuBurgerOpen={isOpen} />

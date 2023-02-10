@@ -9,12 +9,10 @@ type ButtonType = {
   onClick?: () => void;
 };
 
-export const MainButton: React.FC<ButtonType> = ({ text, path, onClick }) => {
-  return (
-    <Link to={path}>
-      <button className="main-btn" onClick={onClick}>
-        {text}
-      </button>
-    </Link>
-  );
-};
+export const MainButton: React.FC<ButtonType> = ({ text, path, onClick }) => (
+  <Link to={path}>
+    <button type="button" className="main-btn" onClick={onClick}>
+      {text}
+    </button>
+  </Link>
+);

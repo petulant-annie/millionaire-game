@@ -17,7 +17,12 @@ export const GameOverPage: React.FC = () => {
       </div>
       <div className="main-headline-content">
         <div className="score-heading">Total score:</div>
-        <div className="start-title">${finalAmount} earned</div>
+        <div className="start-title">
+          $
+          {finalAmount}
+          {' '}
+          earned
+        </div>
         <MainButton text="Try again" path="/" />
       </div>
     </div>

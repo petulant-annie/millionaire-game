@@ -13,11 +13,11 @@ export const Sidebar: React.FC<{
     if (winningAmount.winning[currentIndex] === amount) {
       additionalClassName = 'highlighted';
     } else if (
-      Number(winningAmount.winning[currentIndex].split(',').join('')) >
-      Number(amount.split(',').join(''))
+      Number(winningAmount.winning[currentIndex].split(',').join(''))
+      > Number(amount.split(',').join(''))
     ) {
       additionalClassName = 'inactive';
-    } else '';
+    } else additionalClassName = '';
 
     return (
       <SidebarItem

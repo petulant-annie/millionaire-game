@@ -6,7 +6,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  parser: { '@typescript-eslint/parser': ['.ts', '.tsx'] },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2021,
     tsconfigRootDir: __dirname,
@@ -32,12 +32,14 @@ module.exports = {
     'import/newline-after-import': 1,
     'import/no-unresolved': 'error',
     quotes: ['error', 'single'],
-    'no-unused-expressions': 'warning',
+    'no-unused-expressions': 1,
+    'react/require-default-props': 0,
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
   },
   settings: {
     'import/resolver': {
       webpack: {
-        config: pathJoin(__dirname, './webpack.config.js'),
+        config: 'webpack.config.js',
       },
     },
   },

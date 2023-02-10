@@ -18,7 +18,7 @@
     "noEmit": false,
     "downlevelIteration": true,
     "lib": ["esnext", "dom", "dom.iterable"],
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
